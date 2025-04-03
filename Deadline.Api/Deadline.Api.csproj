@@ -10,7 +10,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
+    <PackageReference Include="Tenon.AspNetCore.Abstractions" Version="0.0.1-alpha-202502241449" />
+    <PackageReference Include="Tenon.AspNetCore.OpenApi.Extensions" Version="0.0.1-alpha-202502241449" />
+    <PackageReference Include="Tenon.FluentValidation.AspNetCore.Extensions" Version="0.0.1-alpha-202502241449" />
+    <PackageReference Include="Tenon.Serialization.Json" Version="0.0.1-alpha-202502241449" />
+    <PackageReference Include="Tenon.Serilog.AspNetCore.Extensions" Version="0.0.1-alpha-202502241449" />
   </ItemGroup>
 
   <ItemGroup>
