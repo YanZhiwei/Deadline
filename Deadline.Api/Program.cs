@@ -1,3 +1,4 @@
+using Tenon.AspNetCore.OpenApi.Extensions;
 
 namespace Deadline.Api;
 
@@ -13,7 +14,9 @@ public class Program
         builder.Services.AddControllers();
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
-
+        if (builder.Environment.IsDevelopment())
+            // Ìí¼Ó OpenAPI ·þÎñ
+            builder.Services.AddScalarOpenApi(builder.Configuration.GetSection("ScalarUI"));
         var app = builder.Build();
 
         app.MapDefaultEndpoints();
@@ -21,7 +24,8 @@ public class Program
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.MapOpenApi();
+            app.UseDeveloperExceptionPage();
+            app.UseScalarOpenApi();
         }
 
         app.UseHttpsRedirection();
