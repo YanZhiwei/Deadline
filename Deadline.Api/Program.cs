@@ -1,3 +1,4 @@
+using Deadline.Api.Configurations;
 using Tenon.AspNetCore.OpenApi.Extensions;
 
 namespace Deadline.Api;
@@ -12,10 +13,8 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddControllers();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
+        builder.Services.AddApiVersioningConfiguration();
         if (builder.Environment.IsDevelopment())
-            // Ìí¼Ó OpenAPI ·þÎñ
             builder.Services.AddScalarOpenApi(builder.Configuration.GetSection("ScalarUI"));
         var app = builder.Build();
 
